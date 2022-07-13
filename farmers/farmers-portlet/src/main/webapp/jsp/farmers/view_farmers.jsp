@@ -3,7 +3,7 @@
 <%@ include file="init.jsp" %>
 
 <liferay-ui:success key="farmer-update-success" message="Данные фермера успешно обновлены" />
-<liferay-ui:success key="farmer-delete-success" message="Запись фермера успешно удалены" />
+<liferay-ui:success key="farmer-delete-success" message="Запись фермера успешно удалена" />
 <liferay-ui:error key="farmer-update-error" message="Ошибка обновления данных фермера" />
 <liferay-ui:error key="farmer-delete-error" message="Ошибка удаления данных фермера" />
 

@@ -14,9 +14,9 @@
 			<mime-type>text/html</mime-type>
 		</supports>
 		<portlet-info>
-			<title>farmers</title>
-			<short-title>farmers</short-title>
-			<keywords>farmers</keywords>
+			<title>Реестр фермеров</title>
+			<short-title>Реестр фермеров</short-title>
+			<keywords>Реестр фермеров</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
@@ -44,9 +44,9 @@
 			<mime-type>text/html</mime-type>
 		</supports>
 		<portlet-info>
-			<title>districts</title>
-			<short-title>districts</short-title>
-			<keywords>districts</keywords>
+			<title>Реестр районов</title>
+			<short-title>Реестр районов</short-title>
+			<keywords>Реестр районов</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
