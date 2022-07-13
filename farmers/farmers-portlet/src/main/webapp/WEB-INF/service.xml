@@ -1,0 +1,76 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.test.farmers">
+	<namespace>lr</namespace>
+	<entity name="Farmer" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="farmerId" type="long" primary="true" />
+
+		<!-- Other fields -->
+
+		<column name="name" type="String" />
+		<column name="legalForm" type="String" />
+		<column name="inn" type="long" />
+		<column name="kpp" type="int" />
+		<column name="ogrn" type="long" />
+		<column name="districtId" type="long" />
+		<column name="districtFields" type="Collection" entity="District" mapping-table="Farmers_Districts" />
+		<column name="registrationDate" type="Date" />
+		<column name="isArchive" type="boolean" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+		
+		<finder name="Name" return-type="Collection">
+			<finder-column name="name" />
+		</finder>
+		
+		<finder name="Inn" return-type="Collection">
+			<finder-column name="inn" />
+		</finder>
+		
+		<finder name="RegistrationDate" return-type="Collection">
+			<finder-column name="registrationDate" />
+		</finder>
+		
+		<finder name="IsArchive" return-type="Collection">
+			<finder-column name="isArchive" />
+		</finder>
+
+
+		<!-- References -->
+
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />
+	</entity>
+	<entity name="District" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+		<column name="districtId" type="long" primary="true" />
+		<column name="name" type="String" />
+		<column name="code" type="int" />
+		<column name="isArchive" type="boolean" />
+		<column name="farmers" type="Collection" entity="Farmer" mapping-table="Farmers_Districts"/>
+		
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<finder name="IsArchive" return-type="Collection">
+			<finder-column name="isArchive"/>
+		</finder>
+		<!-- References -->
+
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />
+	</entity>
+</service-builder>

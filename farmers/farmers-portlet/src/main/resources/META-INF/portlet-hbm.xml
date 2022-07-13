@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.test.farmers.model.District" />
+	<import class="com.test.farmers.model.Farmer" />
+	<class name="com.test.farmers.model.impl.DistrictImpl" table="lr_District">
+		<cache usage="read-write" />
+		<id name="districtId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="code_" />
+		<property name="isArchive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.test.farmers.model.impl.FarmerImpl" table="lr_Farmer">
+		<cache usage="read-write" />
+		<id name="farmerId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="legalForm" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="inn" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="kpp" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ogrn" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="districtId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="registrationDate" type="org.hibernate.type.TimestampType" />
+		<property name="isArchive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+</hibernate-mapping>

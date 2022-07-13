@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.test.farmers.service.DistrictLocalService" class="com.test.farmers.service.impl.DistrictLocalServiceImpl" />
+	<bean id="com.test.farmers.service.DistrictService" class="com.test.farmers.service.impl.DistrictServiceImpl" />
+	<bean id="com.test.farmers.service.persistence.DistrictPersistence" class="com.test.farmers.service.persistence.DistrictPersistenceImpl" parent="basePersistence" />
+	<bean id="com.test.farmers.service.FarmerLocalService" class="com.test.farmers.service.impl.FarmerLocalServiceImpl" />
+	<bean id="com.test.farmers.service.FarmerService" class="com.test.farmers.service.impl.FarmerServiceImpl" />
+	<bean id="com.test.farmers.service.persistence.FarmerPersistence" class="com.test.farmers.service.persistence.FarmerPersistenceImpl" parent="basePersistence" />
+</beans>
